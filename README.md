@@ -1,4 +1,6 @@
 # DLNA-Radio
+Most Internet Radio devices use a third party station database to populate stations in the radio. Sometimes these databases can be outdated or simply vanish off the Internet leaving you in a bit of a bind when trying to add or update your stations. If your device has DLNA / UPnP there is a quick hack using a server called Rygel that can give you a bridge to your device from a Laptop or Raspberry Pi.
+
 Using Rygel to stream radio URL's over DLNA / UPnP. This requires the use of the gStreamer libraries, be sure to install gStreamer as needed for your distro first. There is a basic apt get for GS in the install file.
 
 ```
