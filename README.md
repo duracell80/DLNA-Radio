@@ -38,10 +38,10 @@ $ ./start.sh
 ```
 
 ## Testing in VLC:
-Launch VLC and on the left of the interface choose "Universal Plug n Play", if the server is running you will see a "Folder" called My Radio on <your host name>.
+Launch VLC and on the left of the interface choose "Universal Plug n Play", if the server is running you will see a "Folder" called My Radio on (your host name).
 
 ## Listening on your Radio Device:
-Depending on your device you will find the DLNA / UPnP function maybe under something called Media or Media Center. Browse in there and you will see a directory called My Radio on <your host name>. Choose a station to listen to. The server on your Linux or Raspberry Pi needs to be running to access the streams in the DLNA directory.
+Depending on your device you will find the DLNA / UPnP function maybe under something called Media or Media Center. Browse in there and you will see a directory called My Radio on (your host name). Choose a station to listen to. The server on your Linux or Raspberry Pi needs to be running to access the streams in the DLNA directory.
   
 If rygel has stopped working launch it again with the command:
 ```
