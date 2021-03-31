@@ -1,0 +1,10 @@
+{
+    "dlna-conf": [
+        { "library-name": "My Radio", "library-enabled": "true"}
+    ],    
+    "dlna-stations": [
+        { "url": "https://0n-60s.radionetz.de/0n-60s.mp3", "name": "0n Radio - 60s", "mime" : "audio/mpeg" },
+        { "url": "https://0n-70s.radionetz.de/0n-70s.mp3", "name": "0n Radio - 70s", "mime" : "audio/mpeg" }
+    ]
+}
+
