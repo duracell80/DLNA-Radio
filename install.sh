@@ -2,9 +2,7 @@
 # List Internet Radio Streams to DLNA Directory with Rygel
 
 sudo apt update
-sudo apt install gstreamer1.0-tools
-sudo apt install rygel
-sudo apt install rygel-gst-launch
+sudo apt-get install -y pavucontrol paprefs gupnp-tools gstreamer1.0-tools rygel rygel-gst-launch rygel-playbin rygel-tracker
 
 touch ~/.config/rygel.conf
 chmod a+x start.sh
