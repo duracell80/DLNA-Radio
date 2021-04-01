@@ -45,6 +45,8 @@ dlna-stations ... enter a URL a name and a mime type (MP3 = audio/mpeg) (AAC = a
 
 ## To Run the DLNA Server:
 
+Edit the s_rygel_file variable in main.py to your home directory.
+
 ```
 $ cd ~/
 $ cd DLNA-Radio
