@@ -6,6 +6,7 @@ Using Rygel to stream radio URL's over DLNA / UPnP. This requires the use of the
 ## Devices Tested
 Servers:
 - Linux Mint 20
+- Raspberry Pi (test pending)
 
 Clients:
 - LG Smart TV (complains not audio, maybe buffering?)
