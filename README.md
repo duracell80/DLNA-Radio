@@ -3,6 +3,17 @@ Most Internet Radio devices use a third party station database to populate stati
 
 Using Rygel to stream radio URL's over DLNA / UPnP. This requires the use of the gStreamer libraries, be sure to install gStreamer as needed for your distro first. There is a basic apt get for GS in the install file.
 
+## Devices Tested
+Servers:
+- Linux Mint 20
+
+Clients:
+- LG Smart TV (complains not audio, maybe buffering?)
+- VLC - Working
+- Ocean Digital WR26 - Working
+- Roku Media Player - Working
+- Bubble UPnP Android - Working
+
 ```
 $ cd ~/
 $ git clone https://github.com/duracell80/DLNA-Radio.git
