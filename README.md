@@ -15,6 +15,8 @@ Clients:
 - Roku Media Player - Working
 - Bubble UPnP Android - Working
 
+## Setup
+
 ```
 $ cd ~/
 $ git clone https://github.com/duracell80/DLNA-Radio.git
