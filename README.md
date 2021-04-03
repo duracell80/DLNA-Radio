@@ -6,7 +6,11 @@ Using Rygel to stream radio URL's over DLNA / UPnP. This requires the use of the
 ## Devices Tested
 Servers:
 - Linux Mint 20
-- Raspberry Pi (test pending)
+- Raspberry Pi (RpiOS Lite .. working in terminal)
+
+Raspberry Pi may give this warning if not using desktop but will still function fine for sharing radio.
+
+Rygel-Tracker-WARNING **: 03:30:15.720: Failed to start Tracker service: Cannot autolaunch D-Bus without X11 $DISPLAY. Plugin disabled.
 
 Clients:
 - LG Smart TV (complains not audio, maybe buffering?)
