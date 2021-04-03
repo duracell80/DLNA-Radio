@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import json, os
 
-s_jsonfile          = "stations.json"
+s_jsonfile          = "/home/pi/DLNA-Radio/stations.json"
 s_rygel_file        = "/home/pi/.config/rygel.conf"
 s_rygel_lines       = ""
 s_config_lines      = ""
@@ -25,7 +25,7 @@ with open(s_jsonfile, "r") as json_file:
         s_rygel_items        = s_rygel_items + "station"+str(i)+";"
         s_rygel_lines       += "station"+ str(i) +"-title="+s["name"]+"\n"
         s_rygel_lines       += "station"+ str(i) +"-mime="+s["mime"]+"\n"
-        s_rygel_lines       += "station"+ str(i) +"-launch=souphttpsrc iradio-mode=true location="+s["url"]+"\n\n"
+        s_rygel_lines       += "station"+ str(i) +"-launch=souphttpsrc iradio-mode=true is-live=true location="+s["url"]+"\n\n"
 
 
 

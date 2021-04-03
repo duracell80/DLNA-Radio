@@ -25,8 +25,8 @@ Clients:
 $ cd ~/
 $ git clone https://github.com/duracell80/DLNA-Radio.git
 $ cd DLNA-Radio
-$ chmod a+x install.sh
-$ ./install.sh
+$ chmod a+x install-pi.sh
+$ ./install-pi.sh
 ```
 
 ## Adding Your Stations
@@ -49,12 +49,12 @@ dlna-stations ... enter a URL a name and a mime type (MP3 = audio/mpeg) (AAC = a
 
 ## To Run the DLNA Server:
 
-Edit the s_rygel_file variable in main.py to your home directory.
+Edit the s_rygel_file variable in main.py to your home directory accordingly.
 
 ```
 $ cd ~/
 $ cd DLNA-Radio
-$ ./start.sh
+$ ./start-pi.sh
 ```
 
 ## Testing in VLC:
@@ -69,4 +69,4 @@ rygel
 ```
 
 ## Autorun DLNA server:
-Use your normal way to start a service but rather than starting rygel on its own, choose to run the start.sh script which will then pick up any new stations you add to your stations.json file. 
+Use your normal way to start a service but rather than starting rygel on its own, choose to run the start script which will then pick up any new stations you add to your stations.json file. 
