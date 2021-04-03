@@ -2,7 +2,7 @@
 import json, os
 
 s_jsonfile          = "stations.json"
-s_rygel_file        = "/home/lee/.config/rygel.conf"
+s_rygel_file        = "/home/pi/.config/rygel.conf"
 s_rygel_lines       = ""
 s_config_lines      = ""
 i                   = 0
