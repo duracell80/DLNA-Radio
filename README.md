@@ -3,6 +3,11 @@ Most Internet Radio devices use a third party station database to populate stati
 
 Using Rygel to stream radio URL's over DLNA / UPnP. This requires the use of the gStreamer libraries, be sure to install gStreamer as needed for your distro first. There is a basic apt get for GS in the install file.
 
+## Youtube and Youtube Live over DLNA
+Work in progress, however using youtube-dl it is possible to somewhat stream Youtube audio. Device's vary and the true YT Live streams don't have an audio only stream like the non live ones do.
+
+Use audio/mp4 as the mime for non live streams, use audio/live in the stations.json for youtube live streams
+
 ## Devices Tested
 Servers:
 - Linux Mint 20
