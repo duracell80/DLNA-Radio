@@ -27,7 +27,7 @@ Clients:
 ## Setup
 
 ```
-$ cd ~/
+$ cd /home/pi
 $ git clone https://github.com/duracell80/DLNA-Radio.git
 $ cd DLNA-Radio
 $ chmod a+x install-pi.sh
@@ -57,7 +57,7 @@ dlna-stations ... enter a URL a name and a mime type (MP3 = audio/mpeg) (AAC = a
 Edit the s_rygel_file variable in main.py to your home directory accordingly.
 
 ```
-$ cd ~/
+$ cd /home/pi
 $ cd DLNA-Radio
 $ ./start-pi.sh
 ```
