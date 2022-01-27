@@ -20,7 +20,7 @@ with open(s_jsonfile, "r") as json_file:
     data = json.load(json_file)
     
     for c in data['dlna-conf']:
-        s_config_lines       += "title="+c["library-name"]+" on @PRETTY_HOSTNAME@\n"
+        s_config_lines       += "title="+c["library-name"]+" - @PRETTY_HOSTNAME@\n"
         s_config_lines       += "enabled="+c["library-enabled"]+"\n"    
 
     for s in data['dlna-stations']:
