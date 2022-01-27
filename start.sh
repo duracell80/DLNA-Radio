@@ -2,4 +2,4 @@
 # List Internet Radio Streams to DLNA Directory with Rygel
 
 pip3 install --upgrade youtube-dl
-python3 ~/DLNA-Radio/main.py
+python3 /home/pi/DLNA-Radio/main.py
