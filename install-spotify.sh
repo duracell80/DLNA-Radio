@@ -6,4 +6,4 @@ echo 'deb https://dtcooper.github.io/raspotify raspotify main' | sudo tee /etc/a
 sudo apt update
 sudo apt install -y raspotify
 
-sudo nano /etc/default/raspotify
+sudo nano /etc/raspotify/conf
