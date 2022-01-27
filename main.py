@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 import json, os, subprocess
 
-s_jsonfile          = "/home/lee/DLNA-Radio/stations.json"
-s_rygel_file        = "/home/lee/.config/rygel.conf"
-s_youtube_live      = "/home/lee/DLNA-Radio/get_youtube_live.sh"
-s_youtube_script    = "/home/lee/DLNA-Radio/get_youtube.sh"
-s_youtube_file      = "/home/lee/DLNA-Radio/got_youtube.txt"
+s_jsonfile          = "/home/pi/DLNA-Radio/stations.json"
+s_rygel_file        = "/home/pi/.config/rygel.conf"
+s_youtube_live      = "/home/pi/DLNA-Radio/get_youtube_live.sh"
+s_youtube_script    = "/home/pi/DLNA-Radio/get_youtube.sh"
+s_youtube_file      = "/home/pi/DLNA-Radio/got_youtube.txt"
 s_rygel_lines       = ""
 s_config_lines      = ""
 i                   = 0
