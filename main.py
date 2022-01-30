@@ -48,7 +48,7 @@ with open(s_jsonfile, "r") as json_file:
         
         else:
             s_rygel_lines       += "station"+ str(i) +"-mime="+s["mime"]+"\n"            
-            s_rygel_lines       += "station"+ str(i) +"-launch=souphttpsrc iradio-mode=true is-live=true location="+s["url"]+"\n\n"
+            s_rygel_lines       += "station"+ str(i) +"-launch=souphttpsrc iradio-mode=false is-live=true location="+s["url"]+"\n\n"
 
 
 
