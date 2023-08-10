@@ -1,5 +1,5 @@
 #!../bin/python3
-import json, os, subprocess
+import os, subprocess, time, json
 
 DIR_HOME = os.path.expanduser("~")
 DIR_APP = f"{DIR_HOME}/python-apps/dlnaradio/app"
@@ -21,7 +21,7 @@ os.system("chmod a+r " + s_rygel_file)
 os.system("touch " + s_youtube_file)
 os.system("chmod a+rw " + s_youtube_file)
 
-
+time.sleep(120)
 
 with open(s_jsonfile, "r") as json_file:
     data = json.load(json_file)
