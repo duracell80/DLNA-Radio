@@ -25,6 +25,10 @@ cp $DIR_PWD/*.sh $DIR_APP/app
 cp $DIR_PWD/*.json $DIR_APP/app
 cp $DIR_PWD/main.py $DIR_APP/app
 cp $DIR_PWD/requirements.txt $DIR_APP
+cp $DIR_PWD/dlna.start $DIR_APP
+cp $DIR_PWD/dlna.stop $DIR_APP
+cp $DIR_PWD/dlna.status $DIR_APP
+
 
 
 mv -f $DIR_APP/app/run.sh $DIR_APP

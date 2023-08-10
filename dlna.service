@@ -6,7 +6,7 @@ Type=simple
 User=whoisme
 Group=users
 WorkingDirectory=~/python-apps/dlnaradio/app
-ExecStartPre=/bin/bash -c "source ~/python-apps/dlnaradio/bin/activate oceaneyes"
+ExecStartPre=/bin/bash -c "source ~/python-apps/dlnaradio/bin/activate dlnaradio"
 ExecStart=~/python-apps/dlnaradio/bin/python3 ~/python-apps/dlnaradio/app/main.py
 
 [Install]
