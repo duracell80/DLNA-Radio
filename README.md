@@ -4,13 +4,13 @@ Most Internet Radio devices use a third party station database to populate stati
 Using Rygel to stream radio URL's over DLNA / UPnP. This requires the use of the gStreamer libraries, be sure to install gStreamer as needed for your distro first. There is a basic apt get for GS in the install file.
 
 ## Youtube and Youtube Live over DLNA
-Work in progress, however using youtube-dl it is possible to somewhat stream Youtube audio. Device's vary and the true YT Live streams don't have an audio only stream like the non live ones do.
+Work in progress and switching over to yt-dlp. Originally using youtube-dl it is possible to somewhat stream Youtube audio. Device's vary and the true YT Live streams don't have an audio only stream like the non live ones do.
 
 Use audio/mp4 as the mime for non live streams, use audio/live in the stations.json for youtube live streams
 
 ## Devices Tested
 Servers:
-- Linux Mint 20
+- Linux Mint 21.2
 - Raspberry Pi (RpiOS Lite .. working in terminal)
 
 Raspberry Pi may give this warning if not using desktop but will still function fine for sharing radio.
@@ -27,15 +27,16 @@ Clients:
 ## Setup
 
 ```
-$ cd /home/pi
+$ mkdir -p ~/git
+$ cd ~/git
 $ git clone https://github.com/duracell80/DLNA-Radio.git
-$ cd DLNA-Radio
-$ chmod a+x install-pi.sh
-$ ./install-pi.sh
+$ cd ~/git/DLNA-Radio
+$ chmod u+x install.sh
+$ ./install.sh
 ```
 
 ## Adding Your Stations
-Edit the stations.json file to add the Radio URL's you'd like to broadcast to your devices
+Edit the stations.json file in the ~/python-apps/dlnaradio directory to add the Radio URL's you'd like to broadcast to your devices
 
 ```
 {
@@ -57,21 +58,26 @@ dlna-stations ... enter a URL a name and a mime type (MP3 = audio/mpeg) (AAC = a
 Edit the s_rygel_file variable in main.py to your home directory accordingly.
 
 ```
-$ cd /home/pi
-$ cd DLNA-Radio
-$ ./start-pi.sh
+$ cd ~/python-apps/dlnaradio
+$ ./run.sh
 ```
+Wait for the Python Virtual Environment to start, then run.sh again
+
+```
+$ ./run.sh
+```
+
 
 ## Testing in VLC:
 Launch VLC and on the left of the interface choose "Universal Plug n Play", if the server is running you will see a "Folder" called My Radio on (your host name).
 
 ## Listening on your Radio Device:
 Depending on your device you will find the DLNA / UPnP function maybe under something called Media or Media Center. Browse in there and you will see a directory called My Radio on (your host name). Choose a station to listen to. The server on your Linux or Raspberry Pi needs to be running to access the streams in the DLNA directory.
-  
+
 If rygel has stopped working launch it again with the command:
 ```
 rygel
 ```
 
 ## Autorun DLNA server:
-Use your normal way to start a service but rather than starting rygel on its own, choose to run the start script which will then pick up any new stations you add to your stations.json file. 
+Coming soon, updated with autostart of virtual environment
