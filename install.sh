@@ -6,8 +6,8 @@ DIR_NME="dlnaradio"
 DIR_ENV=$HOME/python-apps
 DIR_APP=$DIR_ENV/$DIR_NME
 
-#sudo apt update
-#sudo apt-get install python3-pip python3.10-venv gupnp-tools gstreamer1.0-tools rygel rygel-gst-launch rygel-playbin rygel-tracker rygel-preferences grilo-plugins-0.3
+sudo apt update
+sudo apt-get install python3-pip python3.10-venv gupnp-tools gstreamer1.0-tools rygel rygel-gst-launch rygel-playbin rygel-tracker rygel-preferences tumbler grilo-plugins-0.3
 
 # VENV - Setup
 mkdir -p $DIR_ENV && cd $DIR_ENV
