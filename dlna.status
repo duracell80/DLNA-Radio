@@ -1,0 +1,1 @@
+watch systemctl status dlna.service

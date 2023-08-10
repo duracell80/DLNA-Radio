@@ -36,7 +36,7 @@ with open(s_jsonfile, "r") as json_file:
         s_rygel_lines       += "station"+ str(i) +"-title="+s["name"]+"\n"
         
 
-        if "youtube" in s["url"]:
+        if "metube" in s["url"]:
             if "live" in s["mime"]:            
                 os.system(s_youtube_live + " " + s["url"])
                 s["mime"] = "audio/mp4"
@@ -59,7 +59,7 @@ with open(s_jsonfile, "r") as json_file:
 
 
 
-s_rygel_head    = "[GstLaunch]\n"+ s_config_lines + "\n"
+s_rygel_head    = "[Tracker3]\nenabled=false\n\n[Tracker]\nenabled=false\n\n[MediaExport]\nenabled=true\nuris=@MUSIC@\n\n[GstLaunch]\n"+ s_config_lines + "\n"
 s_rygel_out     = s_rygel_head + s_rygel_items[:-1] + "\n" + s_rygel_lines
 
 
