@@ -9,7 +9,7 @@ DIR_APP=$DIR_ENV/$DIR_NME
 WHOAMI=$(whoami)
 
 sudo apt update
-sudo apt-get install python3-pip python3.10-venv gupnp-tools gstreamer1.0-tools rygel rygel-gst-launch rygel-playbin rygel-tracker rygel-preferences tumbler grilo-plugins-0.3
+sudo apt-get install python3-pip python3.10-venv gupnp-tools gstreamer1.0-tools rygel rygel-gst-launch rygel-playbin rygel-tracker rygel-preferences tumbler grilo-plugins-0.3 gvfs gupnp-dlna-tools gupnp-tools
 
 # VENV - Setup
 mkdir -p $DIR_ENV && cd $DIR_ENV
@@ -40,6 +40,12 @@ touch $DIR_APP/app/got_youtube.txt
 chmod a+r $DIR_APP/app/got_youtube.txt
 
 cd $DIR_PWD
+
+sudo cp $DIR_PWD/icons/120x120/rygel.png /usr/share/rygel/icons/120x120/
+sudo cp $DIR_PWD/icons/120x120/rygel.jpg /usr/share/rygel/icons/120x120/
+
+sudo cp $DIR_PWD/icons/48x48/rygel.png /usr/share/rygel/icons/48x48
+sudo cp $DIR_PWD/icons/48x48/rygel.jpg /usr/share/rygel/icons/48x48
 
 # Autostart
 cp $DIR_PWD/dlna.service $DIR_PWD/dlna.service.tmp
