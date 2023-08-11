@@ -21,7 +21,7 @@ os.system("chmod a+r " + s_rygel_file)
 os.system("touch " + s_youtube_file)
 os.system("chmod a+rw " + s_youtube_file)
 
-time.sleep(120)
+time.sleep(10)
 
 with open(s_jsonfile, "r") as json_file:
     data = json.load(json_file)
