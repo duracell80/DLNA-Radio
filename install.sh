@@ -41,6 +41,12 @@ chmod a+r $DIR_APP/app/got_youtube.txt
 
 cd $DIR_PWD
 
+sudo cp $DIR_PWD/icons/120x120/rygel.png /usr/share/rygel/icons/120x120/
+sudo cp $DIR_PWD/icons/120x120/rygel.jpg /usr/share/rygel/icons/120x120/
+
+sudo cp $DIR_PWD/icons/48x48/rygel.png /usr/share/rygel/icons/48x48
+sudo cp $DIR_PWD/icons/48x48/rygel.jpg /usr/share/rygel/icons/48x48
+
 # Autostart
 cp $DIR_PWD/dlna.service $DIR_PWD/dlna.service.tmp
 sed -i "s|~/|$HOME/|g" $DIR_PWD/dlna.service.tmp
