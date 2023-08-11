@@ -55,11 +55,14 @@ with open(s_jsonfile, "r") as json_file:
         
         else:
             s_rygel_lines       += "station"+ str(i) +"-mime="+s["mime"]+"\n"            
-            s_rygel_lines       += "station"+ str(i) +"-launch=souphttpsrc iradio-mode=false is-live=true location="+s["url"]+"\n\n"
+            s_rygel_lines       += "station"+ str(i) +"-launch=souphttpsrc iradio-mode=true is-live=true automatic-redirect=true location="+s["url"]+"\n\n"
 
 
+# https://gstreamer.freedesktop.org/documentation/soup/souphttpsrc.html?gi-language=c
+# https://stuff.mit.edu/afs/athena/system/amd64_deb50/os/usr/share/gtk-doc/html/gst-plugins-good-plugins-0.10/gst-plugins-good-plugins-souphttpsrc.html
+# https://rtist.hcldoc.com/help/index.jsp?topic=%2Forg.eclipse.linuxtools.cdt.libhover.devhelp%2Fgst-plugins-good-plugins-1.0%2Fgst-plugins-good-plugins-souphttpsrc.html
 
-s_rygel_head    = "[Tracker3]\nenabled=false\n\n[Tracker]\nenabled=false\n\n[MediaExport]\nenabled=true\nuris=@MUSIC@\n\n[GstLaunch]\n"+ s_config_lines + "\n"
+s_rygel_head    = "[General]\nupnp-enabled=true\nenable-transcoding=true\n\n[Tracker3]\nenabled=false\n\n[Tracker]\nenabled=false\n\n[MediaExport]\nenabled=true\nuris=@MUSIC@\n\n[GstMediaEngine]\ntranscoders=mp3;lpcm;mp2ts;wmv;aac;avc\n\n[GstLaunch]\n"+ s_config_lines + "\n"
 s_rygel_out     = s_rygel_head + s_rygel_items[:-1] + "\n" + s_rygel_lines
 
 
