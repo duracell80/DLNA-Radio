@@ -9,7 +9,8 @@ DIR_APP=$DIR_ENV/$DIR_NME
 WHOAMI=$(whoami)
 
 sudo apt update
-sudo apt-get install python3-pip python3.10-venv gupnp-tools gstreamer1.0-tools rygel rygel-gst-launch rygel-playbin rygel-tracker rygel-preferences tumbler grilo-plugins-0.3
+sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-* pulseaudio-dlna
+sudo apt install python3-pip python3.10-venv gupnp-tools rygel rygel-gst-launch rygel-playbin rygel-tracker rygel-preferences rygel-2.6-dev tumbler grilo-plugins-0.3
 
 # VENV - Setup
 mkdir -p $DIR_ENV && cd $DIR_ENV

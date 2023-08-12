@@ -9,9 +9,10 @@ DIR_BSE=$HOME/python-apps/$APP_NME
 PIP_INS=$(which python | sed -n "s/.*\(${APP_NME}\).*/\1/p" | wc -l)
 
 if [ ! -f "./bin/activate" ]; then
-	#echo "[!] Venv not detected try running this script from ~/python-apps/${APP_NME}"
+	echo "[!] Venv not detected try running this script from ~/python-apps/${APP_NME}"
 	#exit
-	cd $DIR_BSE/app && $DIR_BSE/app/main.py
+	#cd $DIR_BSE/app && $DIR_BSE/app/main.py
+	python3 $DIR_PWD/main.py
 fi
 
 if [[ $PIP_INS == 0 ]]; then
