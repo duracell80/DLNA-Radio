@@ -1,5 +1,5 @@
 #!../bin/python3
-import os, subprocess, time, json
+import os, sys, subprocess, time, json
 
 DIR_HOME = os.path.expanduser("~")
 DIR_APP = f"{DIR_HOME}/python-apps/dlnaradio/app"
@@ -21,39 +21,63 @@ os.system("chmod a+r " + s_rygel_file)
 os.system("touch " + s_youtube_file)
 os.system("chmod a+rw " + s_youtube_file)
 
-time.sleep(10)
 
-with open(s_jsonfile, "r") as json_file:
-	data = json.load(json_file)
 
-	for c in data['dlna-conf']:
-		s_config_lines       += "title="+c["library-name"]+" - @PRETTY_HOSTNAME@\n"
-		s_config_lines       += "enabled="+c["library-enabled"]+"\n"
+s_rppfile = f"{DIR_HOME}/.config/cinnamon/spices/radio@driglu4it/radio@driglu4it.json"
 
-	for s in data['dlna-stations']:
-		i += 1
-		s_rygel_items        = s_rygel_items + "station"+str(i)+";"
-		s_rygel_lines       += "station"+ str(i) +"-title="+s["name"]+"\n"
+# If Cinnamon DE and Radio++ installed, manage stations in that UI
+if os.path.isfile(s_rppfile):
+	print("[i] Loading stations from Radio++")
+	s_config_lines       += "title=Radio++ Stations on @PRETTY_HOSTNAME@\n"
+	s_config_lines       += "enabled=true\n"
 
-		if "metube" in s["url"]:
-			if "live" in s["mime"]:
-				os.system(s_youtube_live + " " + s["url"])
-				s["mime"] = "audio/mp4"
+	with open(s_rppfile, "r") as json_file:
+		data = json.load(json_file)
+
+		for s in data["tree"]["value"]:
+			if str(s["inc"]).lower() == "true":
+				i += 1
+
+				s_rygel_items  = s_rygel_items + "station"+str(i)+";"
+				s_rygel_lines += "station"+ str(i) +"-title="+s["name"]+"\n"
+				s_rygel_lines += "station"+ str(i) +"-mime=audio/mpeg\n"
+				s_rygel_lines += "station"+ str(i) +"-dlnaprofile=audio/mpeg\n"
+				s_rygel_lines += "station"+ str(i) +"-launch=souphttpsrc iradio-mode=false is-live=false timeout=10 num-buffers=10000 automatic-redirect=true location="+s["url"]+"\n\n"
+
+
+# Else manage stations in the json file in ~/python-apps/dlnaradio/
+else:
+	with open(s_jsonfile, "r") as json_file:
+		data = json.load(json_file)
+
+		for c in data['dlna-conf']:
+			s_config_lines       += "title="+c["library-name"]+" on @PRETTY_HOSTNAME@\n"
+			s_config_lines       += "enabled="+c["library-enabled"]+"\n"
+
+		for s in data['dlna-stations']:
+			i += 1
+			s_rygel_items        = s_rygel_items + "station"+str(i)+";"
+			s_rygel_lines       += "station"+ str(i) +"-title="+s["name"]+"\n"
+
+			if "metube" in s["url"]:
+				if "live" in s["mime"]:
+					os.system(s_youtube_live + " " + s["url"])
+					s["mime"] = "audio/mp4"
+
+				else:
+					os.system(s_youtube_script + " " + s["url"])
+					s_rygel_lines       += "station"+ str(i) +"-mime="+s["mime"]+"\n"
+
+					s_temp_file = open(s_youtube_file, "r")
+					s_yt_url = s_temp_file.read()
+					s_temp_file.close()
+
+				s_rygel_lines += "station"+ str(i) +"-launch=souphttpsrc is-live=true location="+s_yt_url+" ! qtdemux name=demuxer demuxer.audio_0 ! queue ! avdec_aac ! audioconvert ! audioresample ! avenc_aac ! autoaudiosink\n\n"
 
 			else:
-				os.system(s_youtube_script + " " + s["url"])
-				s_rygel_lines       += "station"+ str(i) +"-mime="+s["mime"]+"\n"
-
-				s_temp_file = open(s_youtube_file, "r")
-				s_yt_url = s_temp_file.read()
-				s_temp_file.close()
-
-			s_rygel_lines += "station"+ str(i) +"-launch=souphttpsrc is-live=true location="+s_yt_url+" ! qtdemux name=demuxer demuxer.audio_0 ! queue ! avdec_aac ! audioconvert ! audioresample ! avenc_aac ! autoaudiosink\n\n"
-
-		else:
-			s_rygel_lines += "station"+ str(i) +"-mime="+s["mime"]+"\n"
-			s_rygel_lines += "station"+ str(i) +"-dlnaprofile="+s["mime"]+"\n"
-			s_rygel_lines += "station"+ str(i) +"-launch=souphttpsrc iradio-mode=true is-live=true automatic-redirect=true location="+s["url"]+"\n\n"
+				s_rygel_lines += "station"+ str(i) +"-mime="+s["mime"]+"\n"
+				s_rygel_lines += "station"+ str(i) +"-dlnaprofile="+s["mime"]+"\n"
+				s_rygel_lines += "station"+ str(i) +"-launch=souphttpsrc iradio-mode=true is-live=true automatic-redirect=true location="+s["url"]+"\n\n"
 
 
 
