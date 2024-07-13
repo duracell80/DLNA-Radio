@@ -31,7 +31,7 @@ $ mkdir -p ~/git
 $ cd ~/git
 $ git clone https://github.com/duracell80/DLNA-Radio.git
 $ cd ~/git/DLNA-Radio
-$ chmod u+x install.sh
+$ chmod +x *.sh
 $ ./install.sh
 ```
 
