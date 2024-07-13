@@ -9,8 +9,7 @@ DIR_APP=$DIR_ENV/$DIR_NME
 WHOAMI=$(whoami)
 
 sudo apt update
-sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-*
-sudo apt install python3-pip python3.11-venv gupnp-tools rygel rygel-gst-launch rygel-playbin rygel-tracker rygel-preferences rygel-2.8-dev tumbler grilo-plugins-0.3
+sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-* python3-pip python3.11-venv gupnp-tools rygel rygel-gst-launch rygel-playbin rygel-tracker rygel-preferences rygel-2.8-dev tumbler grilo-plugins-0.3
 
 # Include pulseaudio-dlna source if needed ... Debian is moving to pipewire
 #wget -nc https://github.com/masmu/pulseaudio-dlna/archive/refs/tags/0.5.2.zip
