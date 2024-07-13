@@ -41,4 +41,7 @@ do
     esac
 done
 
+sudo systemctl restart dlna.service
+sleep 8
+
 watch systemctl status dlna.service

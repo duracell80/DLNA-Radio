@@ -61,3 +61,5 @@ sudo mv $DIR_PWD/dlna.service.tmp /lib/systemd/system/dlna.service
 sudo systemctl daemon-reload
 sudo systemctl enable dlna.service
 sudo systemctl start dlna.service
+
+sleep 8
