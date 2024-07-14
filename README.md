@@ -52,7 +52,16 @@ Edit the stations.json file in the ~/python-apps/dlnaradio directory to add the 
 dlna-conf ... A library name and turning the library on or off can be done here
 dlna-stations ... enter a URL a name and a mime type (MP3 = audio/mpeg) (AAC = audio/mp4)
 
-## To Run the DLNA Server:
+## Autorun:
+The installation uses systemd to start a service called dlna.service
+
+To restart the service type without the dollar:
+```
+$ sudo systemctrl restart dlna.service
+$ systemctrl status dlna.service
+```
+
+## To Run DLNA Radio manually:
 
 Edit the s_rygel_file variable in main.py to your home directory accordingly.
 
@@ -72,11 +81,3 @@ Launch VLC and on the left of the interface choose "Universal Plug n Play", if t
 
 ## Listening on your Radio Device:
 Depending on your device you will find the DLNA / UPnP function maybe under something called Media or Media Center. Browse in there and you will see a directory called My Radio on (your host name). Choose a station to listen to. The server on your Linux or Raspberry Pi needs to be running to access the streams in the DLNA directory.
-
-If rygel has stopped working launch it again with the command:
-```
-rygel
-```
-
-## Autorun DLNA server:
-Coming soon, updated with autostart of virtual environment
