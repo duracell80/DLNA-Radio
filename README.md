@@ -27,13 +27,12 @@ Clients:
 ## Setup
 
 ```
-$ mkdir -p ~/git
-$ cd ~/git
-$ git clone https://github.com/duracell80/DLNA-Radio.git
-$ cd ~/git/DLNA-Radio
+$ mkdir -p ~/gitb && cd ~/git
+$ git clone https://github.com/duracell80/DLNA-Radio.git && cd ~/git/DLNA-Radio
 $ chmod +x *.sh
 $ ./install.sh
 ```
+Choose between older Raspbery Pi Os and newer (Bookworm)
 
 ## Adding Your Stations
 Edit the stations.json file in the ~/python-apps/dlnaradio directory to add the Radio URL's you'd like to broadcast to your devices
