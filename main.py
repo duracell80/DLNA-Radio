@@ -6,6 +6,7 @@ DIR_APP = f"{DIR_HOME}/python-apps/dlnaradio/app"
 
 
 s_jsonfile          = f"{DIR_APP}/stations.json"
+s_home_conf         = f"{DIR_HOME}/.config"
 s_rygel_file        = f"{DIR_HOME}/.config/rygel.conf"
 s_youtube_live      = f"{DIR_APP}/get_youtube_live.sh"
 s_youtube_script    = f"{DIR_APP}/get_youtube.sh"
@@ -16,6 +17,7 @@ i                   = 0
 s_rygel_items       = "launch-items="
 
 #os.system("rm -f " + s_rygel_file)
+os.system("mkdir -p " + s_home_conf)
 os.system("touch " + s_rygel_file)
 os.system("chmod a+r " + s_rygel_file)
 os.system("touch " + s_youtube_file)

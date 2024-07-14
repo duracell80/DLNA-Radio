@@ -6,6 +6,8 @@ DIR_NME="dlnaradio"
 DIR_ENV=$HOME/python-apps
 DIR_APP=$DIR_ENV/$DIR_NME
 
+mkdir -p $HOME/.config
+
 WHOAMI=$(whoami)
 
 sudo apt update
